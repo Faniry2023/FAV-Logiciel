@@ -1,0 +1,133 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:MD="http://materialdesigninxaml.net/winfx/xaml/themes"
+                    xmlns:MW="http://metro.mahapps.com/winfx/xaml/controls">
+    
+    <!--boutton a capturer-->
+    <Style x:Key="buttonStyle_1" TargetType="Button" BasedOn="{StaticResource MaterialDesignFlatMidBgButton}">
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Width" Value="200"/>
+        <Setter Property="Height" Value="50"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Name="BorderButton" CornerRadius="10 10 10 10" Background="#FF078FFF">
+                        <Label Content="Se connecter"
+                               FontSize="20"
+                               Foreground="AliceBlue"
+                               FontFamily="Bell MT"
+                               HorizontalContentAlignment="Center"
+                               VerticalContentAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="BorderButton" Property="BorderThickness" Value="1"/>
+                            <Setter TargetName="BorderButton" Property="BorderBrush" Value="White"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseCaptured" Value="True">
+                            <Setter TargetName="BorderButton" Property="Background" Value="#FF030B11"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--boutton a capturer-->
+    <Style x:Key="buttonStyle_3" TargetType="Button" BasedOn="{StaticResource MaterialDesignFlatMidBgButton}">
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Width" Value="200"/>
+        <Setter Property="Height" Value="50"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Name="BorderButton" CornerRadius="10 10 10 10" Background="#FF078FFF">
+                        <Label Content="Supprimer"
+                               FontSize="20"
+                               Foreground="AliceBlue"
+                               FontFamily="Bell MT"
+                               HorizontalContentAlignment="Center"
+                               VerticalContentAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="BorderButton" Property="BorderThickness" Value="1"/>
+                            <Setter TargetName="BorderButton" Property="BorderBrush" Value="White"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseCaptured" Value="True">
+                            <Setter TargetName="BorderButton" Property="Background" Value="#FF030B11"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+        
+    <!--boutton sous forme de lien-->
+    <Style x:Key="buttonToLien" TargetType="Button">
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Width" Value="200"/>
+        <Setter Property="Height" Value="50"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border BorderThickness="0">
+                        <Label Content="Créer un compte"
+                               Name="newCompte"
+                               FontSize="20"
+                               Foreground="White"
+                               FontFamily="Bell MT"
+                               HorizontalContentAlignment="Center"
+                               VerticalContentAlignment="Top"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="newCompte" Property="Foreground" Value="#FF0084FF"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <!--button pour ajouter des produit-->
+
+    <Style x:Key="buttonStyle_2" TargetType="Button" BasedOn="{StaticResource MaterialDesignFlatDarkButton}">
+        <Setter Property="Foreground" Value="Wheat"/>
+        <Setter Property="Width" Value="300"/>
+        <Setter Property="Margin" Value="0 10 0 0"/>
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="FontFamily" Value="Book Antiqua"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Name="brd" HorizontalAlignment="Stretch">
+                        <Border.Style>
+                            <Style TargetType="Border">
+                                <Setter Property="Background" Value="#FF078FFF"/>
+                                <Setter Property="CornerRadius" Value="10 10 10 10"/>
+                                <Setter Property="BorderThickness" Value="1"/>
+                                <Setter Property="BorderBrush" Value="White"/>
+                            </Style>
+                        </Border.Style>
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="brd" Property="BorderThickness" Value="3"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

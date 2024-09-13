@@ -1,0 +1,323 @@
+﻿<UserControl x:Class="FAV.UCs.addProduit.UCAddProduit"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FAV.UCs.addProduit"
+             mc:Ignorable="d" 
+            xmlns:MD="http://materialdesigninxaml.net/winfx/xaml/themes"
+            xmlns:MW="http://metro.mahapps.com/winfx/xaml/controls"
+            SnapsToDevicePixels="True"
+            UseLayoutRounding="True"
+            Background="Transparent"
+            BorderThickness="0"
+            d:DesignHeight="750" d:DesignWidth="1400">
+    <Grid>
+        <Border Opacity="0.03">
+            <Border.Background>
+                <ImageBrush ImageSource="/Image/couvAdd.jpg"/>
+            </Border.Background>
+
+        </Border>
+        <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Vertical" Grid.Row="0">
+                <Label Content="Ajout du produit" FontSize="14" HorizontalAlignment="Center"
+                           HorizontalContentAlignment="Center"
+                           Margin="-60 0 0 0"
+                           VerticalAlignment="Center" VerticalContentAlignment="Center"
+                           FontWeight="ExtraBold" Foreground="White"/>
+                <Rectangle Fill="White" Height="5" Width="150" Margin="-55 0 0 0"/>
+            </StackPanel>
+            <Border Grid.Row="1" BorderThickness="0 1 0 1" BorderBrush="#FF078FFF" Width="1100"  Margin="-40 10 0 0" CornerRadius="20">
+                <Label Content="déplacer votre image dans les 5 cadres ci-dessous avec des formats en 'jpg' en 'png' et en 'gif'. Le première image sera votre image de représentation" 
+                   Style="{StaticResource labelStyle_1}"/>
+            </Border>
+            <Grid Grid.Row="2" Margin="0 -10 0 0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="500"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <Border Height="600"  VerticalAlignment="Top" Width="480" 
+                            Margin="10 20 10 0" CornerRadius="10 10 10 10"
+                            BorderThickness="1" BorderBrush="White">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="300"/>
+                                    <RowDefinition Height="150"/>
+                                    <RowDefinition Height="150"/>
+                                </Grid.RowDefinitions>
+                                <Border Grid.Row="0" BorderThickness="0 0 0 3" BorderBrush="#FF078FFF" CornerRadius="20" Margin="10">
+                                    <StackPanel Orientation="Vertical">
+                                        <Label Content="Image" FontSize="15" HorizontalAlignment="Center"
+                                           HorizontalContentAlignment="Center"
+                                           Margin="0 -10 0 10"
+                                           VerticalAlignment="Center" VerticalContentAlignment="Center"
+                                           FontWeight="ExtraBold" Foreground="White"/>
+
+                                        <StackPanel Orientation="Horizontal"
+                                            Height="250" HorizontalAlignment="Center"
+                                            Background="Transparent" Margin="0 -5 0 0">
+
+                                            <Canvas x:Name="CnvsImgDrapDropCouv" Width="120" Height="250"
+                                            AllowDrop="True"
+                                            Background="#FF078FFF" Drop="CnvsImgDrapDropCouv_Drop">
+                                                <MD:PackIcon Kind="FileUploadDownloadOutline" Foreground="white"
+                                                     Height="200" Width="150"/>
+                                            </Canvas>
+                                            <Border Width="220" BorderThickness="1" 
+                                            BorderBrush="#FF078FFF"
+                                            AllowDrop="True"
+                                            Background="Transparent">
+                                                <Image x:Name="ImgCouv" Stretch="Fill" Width="220" Height="200"/>
+                                            </Border>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Border>
+                                <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <Border BorderThickness="0" Width="200" Margin="5" CornerRadius="20">
+                                        <StackPanel Orientation="Horizontal"
+                                                  Height="120" HorizontalAlignment="Center"
+                                                  Background="Transparent">
+                                            <Canvas x:Name="CnvsImgDrapDrop1" Width="60" Height="120"
+                                                    AllowDrop="True"
+                                                    Background="#FF078FFF" Drop="CnvsImgDrapDrop1_Drop">
+                                                <MD:PackIcon Kind="FileUploadDownloadOutline" Foreground="white"
+                                                             Height="140" Width="90"/>
+                                            </Canvas>
+                                            <Border Width="120" BorderThickness="1" 
+                                                    BorderBrush="#FF078FFF"
+                                                    AllowDrop="True"
+                                                    Background="Transparent">
+                                                <Image x:Name="Img1" Stretch="Fill" Width="115" Height="115"/>
+                                            </Border>
+                                        </StackPanel>
+                                    </Border>
+                                    <Border BorderThickness="0" Width="200" Margin="25 5 5 5" CornerRadius="20">
+                                        <StackPanel Orientation="Horizontal"
+                                                  Height="120" HorizontalAlignment="Center"
+                                                  Background="Transparent">
+                                            <Canvas x:Name="CnvsImgDrapDrop2" Width="60" Height="120"
+                                                    AllowDrop="True"
+                                                    Background="#FF078FFF" Drop="CnvsImgDrapDrop2_Drop">
+                                                <MD:PackIcon Kind="FileUploadDownloadOutline" Foreground="white"
+                                                             Height="140" Width="90"/>
+                                            </Canvas>
+                                            <Border Width="120" BorderThickness="1" 
+                                                    BorderBrush="#FF078FFF"
+                                                    AllowDrop="True"
+                                                    Background="Transparent">
+                                                <Image x:Name="Img2" Stretch="Fill" Width="115" Height="115"/>
+                                            </Border>
+                                        </StackPanel>
+                                    </Border>
+                                </StackPanel>
+                                <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <Border BorderThickness="0" Width="200" Margin="5" CornerRadius="20">
+                                        <StackPanel Orientation="Horizontal"
+                                                  Height="120" HorizontalAlignment="Center"
+                                                  Background="Transparent">
+                                            <Canvas x:Name="CnvsImgDrapDrop3" Width="60" Height="120"
+                                                    AllowDrop="True"
+                                                    Background="#FF078FFF" Drop="CnvsImgDrapDrop3_Drop">
+                                                <MD:PackIcon Kind="FileUploadDownloadOutline" Foreground="white"
+                                                             Height="140" Width="90"/>
+                                            </Canvas>
+                                            <Border Width="120" BorderThickness="1" 
+                                                    BorderBrush="#FF078FFF"
+                                                    AllowDrop="True"
+                                                    Background="Transparent">
+                                                <Image x:Name="Img3" Stretch="Fill" Width="115" Height="115"/>
+                                            </Border>
+                                        </StackPanel>
+                                    </Border>
+                                    <Border BorderThickness="1" Width="200" Margin="25 5 5 5" >
+                                        <StackPanel Orientation="Horizontal"
+                                                  Height="120" HorizontalAlignment="Center"
+                                                  Background="Transparent">
+                                            <Canvas x:Name="CnvsImgDrapDrop4" Width="60" Height="120"
+                                                    AllowDrop="True"
+                                                    Background="#FF078FFF" Drop="CnvsImgDrapDrop4_Drop">
+                                                <MD:PackIcon Kind="FileUploadDownloadOutline" Foreground="white"
+                                                             Height="140" Width="90"/>
+                                            </Canvas>
+                                            <Border Width="120" BorderThickness="1" 
+                                                    BorderBrush="#FF078FFF"
+                                                    AllowDrop="True"
+                                                    Background="Transparent">
+                                                <Image x:Name="Img4" Stretch="Fill" Width="115" Height="115"/>
+                                            </Border>
+                                        </StackPanel>
+                                    </Border>
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <Border BorderThickness="1" BorderBrush="White"
+                            CornerRadius="10" Width="400" Height="600" VerticalAlignment="Top"
+                            Margin="-40 20 0 0">
+                            <StackPanel Orientation="Vertical">
+                                <Label Content="Apropos du produit" FontSize="14" HorizontalAlignment="Center"
+                                   HorizontalContentAlignment="Center" Margin="0 20 0 0"
+                                   VerticalAlignment="Center" VerticalContentAlignment="Center"
+                                   FontWeight="ExtraBold" Foreground="White"/>
+                                <TextBox x:Name="txtNomProduit" Width="350" Height="50"
+                                 HorizontalAlignment="Center"
+                                 HorizontalContentAlignment="Left"
+                                 Style="{StaticResource TxtStyle}"
+                                 MD:HintAssist.Hint="Nom du produit"/>
+                                <TextBox x:Name="txtMarque" Width="350" Height="50"
+                                 HorizontalAlignment="Center"
+                                 HorizontalContentAlignment="Left"
+                                 Style="{StaticResource TxtStyle}"
+                                 MD:HintAssist.Hint="Marque du produit"/>
+                                <TextBox x:Name="txtNbTotalProd" Width="350" Height="50"
+                                 HorizontalAlignment="Center"
+                                 HorizontalContentAlignment="Left"
+                                 Style="{StaticResource TxtStyle}"
+                                 MD:HintAssist.Hint="Nombre total du produit"/>
+                                <StackPanel Orientation="Horizontal" Margin="25 0 0 0">
+                                    <TextBox x:Name="txtPrix" Width="350" Height="50"
+                                         HorizontalAlignment="Center"
+                                         HorizontalContentAlignment="Left"
+                                         Style="{StaticResource TxtStyle}"
+                                         MD:HintAssist.Hint="Votre Prix" TextChanged="txtPrix_TextChanged" Panel.ZIndex="2"/>
+                                    <Label Content="Ariary" FontSize="15" HorizontalAlignment="Center"
+                                           HorizontalContentAlignment="Center" Margin="-60 10 0 0"
+                                           VerticalAlignment="Center" VerticalContentAlignment="Center"
+                                           FontWeight="ExtraBold" Foreground="White"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="25 0 0 0">
+                                    <TextBox x:Name="txtPromo" Width="350" Height="50"
+                                             HorizontalAlignment="Center"
+                                             HorizontalContentAlignment="Left"
+                                             IsEnabled="False" Panel.ZIndex="2"
+                                             Style="{StaticResource TxtStyle}"
+                                             MD:HintAssist.Hint="Pourcentage du réduction du promotion" TextChanged="txtPromo_TextChanged"/>
+                                    <Label Content="%" FontSize="15" HorizontalAlignment="Center"
+                                           HorizontalContentAlignment="Center" Margin="-40 10 0 0"
+                                           VerticalAlignment="Center" VerticalContentAlignment="Center"
+                                           FontWeight="ExtraBold" Foreground="White"/>
+                                </StackPanel>
+                                <ComboBox x:Name="cmbAddCategorie" 
+                                          Style="{StaticResource cmbStyle}" Width="350" Height="40"
+                                          MinWidth="50" MD:HintAssist.Hint="Catégorie" Cursor="Hand" SelectionChanged="cmbAddCategorie_SelectionChanged"/>
+                                <ComboBox x:Name="cmbAddType"
+                                          Style="{StaticResource cmbStyle}" Width="350" Height="40"
+                                          MinWidth="50" MD:HintAssist.Hint="Type" Cursor="Hand"/>
+                                <Border BorderThickness="5" BorderBrush="White" Width="350" CornerRadius="10" Margin="5" Padding="0 0 0 5">
+                                    <TextBox x:Name="txtDescription" Width="300" Height="150"
+                                         HorizontalAlignment="Center" TextWrapping="Wrap" AcceptsReturn="True"
+                                         HorizontalContentAlignment="Left"
+                                         Style="{StaticResource TxtStyle}"
+                                         MD:HintAssist.Hint="Déscription"/>
+                                </Border>
+                                <Border BorderThickness="1" BorderBrush="White" Height="40" Margin="20 00 20 20" CornerRadius="10 10 10 10" VerticalAlignment="Center">
+                                    <CheckBox x:Name="Promo" Content="Activer le mode promotion" 
+                                              Background="White"
+                                              VerticalContentAlignment="Center"
+                                              VerticalAlignment="Center"
+                                              Margin="0 0 0 0"
+                                              HorizontalAlignment="Center"
+                                              Foreground="White"
+                                              IsChecked="False" Checked="Promo_Checked" Click="Promo_Click" />
+                                </Border>
+                            </StackPanel>
+                        </Border>
+                    </Grid>
+                    <Grid Grid.Column="2">
+                        <Border BorderThickness="1" BorderBrush="White"
+                            CornerRadius="10" Width="400" Height="600" VerticalAlignment="Top"
+                            Margin="-100 20 0 0">
+                            <StackPanel Orientation="Vertical">
+                                <Label Content="Autre déscription précise" FontSize="14" HorizontalAlignment="Center"
+                                       HorizontalContentAlignment="Center"
+                                       Margin="0 20 0 0"
+                                       VerticalAlignment="Center" VerticalContentAlignment="Center"
+                                       FontWeight="ExtraBold" Foreground="White"/>
+                                <TextBox x:Name="txtDescriTitre" Width="300" Height="50"
+                                 HorizontalAlignment="Center"
+                                 HorizontalContentAlignment="Left"
+                                 Style="{StaticResource TxtStyle}"
+                                 MD:HintAssist.Hint="titre du déscription"/>
+                                <Border BorderThickness="5" BorderBrush="White" Width="320" CornerRadius="20" Margin="10" Padding="0 0 0 10">
+                                    <TextBox x:Name="txtDescriValeur" Width="280" Height="80"
+                                             HorizontalAlignment="Center" TextWrapping="Wrap" AcceptsReturn="True"
+                                             HorizontalContentAlignment="Left"
+                                             Style="{StaticResource TxtStyle}"
+                                             MD:HintAssist.Hint="Déscription"/>
+                                </Border>
+                                <Button Content="Ajouter" Style="{StaticResource buttonStyle_2}" Width="350" Margin="0 -5 0 0" Click="Button_Click"/>
+                                <Border  BorderThickness="2" BorderBrush="#FF078FFF" CornerRadius="20" Margin="10" Padding="0 0 0 10">
+                                    <StackPanel Orientation="Vertical">
+                                        <Label Content="Votre déscription" FontSize="14" HorizontalAlignment="Center"
+                                               HorizontalContentAlignment="Center"
+                                               Margin="0 0 0 0"
+                                               VerticalAlignment="Center" VerticalContentAlignment="Center"
+                                               FontWeight="ExtraBold" Foreground="White"/>
+                                        <ListBox Name="ListBoxDescri" Width="300" Height="250"
+                                            ItemContainerStyle="{StaticResource ListBoxCitiesItemStyle}">
+                                            <ListBox.ContextMenu>
+                                                <ContextMenu Background="Transparent">
+                                                    <ContextMenu.Items>
+                                                        <MenuItem Name="lstBxMenuItemDelete">
+                                                            <MenuItem.Style>
+                                                                <Style TargetType="MenuItem">
+                                                                    <Setter Property="Template">
+                                                                        <Setter.Value>
+                                                                            <ControlTemplate TargetType="MenuItem">
+                                                                                <Border>
+                                                                                    <StackPanel Orientation="Vertical" Width="200">
+
+                                                                                        <Button Name="SupDescri" Width="200" Height="50"
+                                                                                            Content="blabla"
+                                                                                            Margin="0 0"
+                                                                                            Style="{StaticResource buttonStyle_3}" Click="SupDescri_Click"/>
+                                                                                    </StackPanel>
+                                                                                </Border>
+                                                                            </ControlTemplate>
+                                                                        </Setter.Value>
+                                                                    </Setter>
+                                                                </Style>
+                                                            </MenuItem.Style>
+                                                        </MenuItem>
+                                                    </ContextMenu.Items>
+                                                </ContextMenu>
+                                            </ListBox.ContextMenu>
+                                        </ListBox>
+                                    </StackPanel>
+                                </Border>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <Button Style="{StaticResource buttonStyle_2}" Background="White" Width="60" Height="40" 
+                                            HorizontalAlignment="Center" 
+                                            HorizontalContentAlignment="Center"
+                                            Margin="0" Click="Button_Click_1">
+                                        <MD:PackIcon Kind="CancelBox" Height="30" Width="30" Foreground="Red"/>
+                                    </Button>
+                                    <Button Name="btnPublier" Style="{StaticResource buttonStyle_2}" Content="Publié"  
+                                            HorizontalAlignment="Center" 
+                                            HorizontalContentAlignment="Center"
+                                            Height="40" Margin="10 0 0 0" Click="btnPublier_Click">
+
+                                    </Button>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Grid>
+        <MW:ProgressRing Name="progressring" Visibility="Hidden"
+                                         Foreground="White"
+                                         Height="200" Width="200"/>
+    </Grid>
+</UserControl>

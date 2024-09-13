@@ -1,0 +1,177 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:MW="http://metro.mahapps.com/winfx/xaml/controls"
+                    xmlns:MD="http://materialdesigninxaml.net/winfx/xaml/themes">
+
+    <!--listbox ville-->
+    <Style x:Key="ListBoxCitiesItemStyle" TargetType="ListBoxItem">
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ListBoxItem">
+                    <Border Name="lstBxItemBorder"
+                                    CornerRadius="10" Margin="4"
+                                    BorderThickness="1" BorderBrush="Cyan">
+                        <Label Name="lblCName" Content="{Binding descri}"
+                                       FontSize="14" FontWeight="Bold"
+                                       Foreground="White" HorizontalContentAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="lstBxItemBorder" Property="Background" Value="#FF040C2D"></Setter>
+                        </Trigger>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter TargetName="lstBxItemBorder" Property="Background" Value="cyan"></Setter>
+                            <Setter TargetName="lblCName" Property="Foreground" Value="#FF040C2D"/>
+                            <Setter TargetName="lblCName" Property="FontSize" Value="18"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <!--liste produit statistique-->
+    <Style x:Key="ListBoxProduitStati" TargetType="ListBoxItem">
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ListBoxItem">
+                    <Border Name="lstBxItemBorder"
+                                CornerRadius="10" Margin="4"
+                                BorderThickness="1" BorderBrush="Cyan">
+                        <Grid>
+                            <Label Name="lblPName" Content="{Binding Nom_produit}"
+           FontSize="14" FontWeight="Bold"
+           Foreground="White" HorizontalContentAlignment="Center"/>
+                            <Label Name="lblId" Content="{Binding Id_produit}" Visibility="Hidden"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="lstBxItemBorder" Property="Background" Value="#FF040C2D"></Setter>
+                        </Trigger>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter TargetName="lstBxItemBorder" Property="Background" Value="cyan"></Setter>
+                            <Setter TargetName="lblPName" Property="Foreground" Value="#FF040C2D"/>
+                            <Setter TargetName="lblPName" Property="FontSize" Value="18"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <!--liste produit statistique-->
+    <Style x:Key="ListBoxProduitMod" TargetType="ListBoxItem">
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ListBoxItem">
+                    <Border Name="lstBxItemBorder"
+                            CornerRadius="10" Margin="4"
+                            BorderThickness="1" BorderBrush="Cyan">
+                        <Grid>
+                            <Label Name="lblPName" Content="{Binding Produit.Nom_produit}"
+       FontSize="14" FontWeight="Bold"
+       Foreground="White" HorizontalContentAlignment="Center"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="lstBxItemBorder" Property="Background" Value="#FF040C2D"></Setter>
+                        </Trigger>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter TargetName="lstBxItemBorder" Property="Background" Value="cyan"></Setter>
+                            <Setter TargetName="lblPName" Property="Foreground" Value="#FF040C2D"/>
+                            <Setter TargetName="lblPName" Property="FontSize" Value="18"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--liste commande statistique-->
+    <Style x:Key="ListBoxPersCommande" TargetType="ListBoxItem">
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ListBoxItem">
+                    <Border Name="lstBxItemBorder"
+                            CornerRadius="10" Margin="4"
+                            BorderThickness="1" BorderBrush="Cyan">
+                        <StackPanel Orientation="Horizontal" Margin="10">
+                            <Border Width="50" Height="50" BorderThickness="1" BorderBrush="White">
+                                <Image Source="{Binding imageUser}" Width="50" Height="50"/>
+                            </Border>
+                            <Border BorderThickness="0" BorderBrush="White" HorizontalAlignment="Center">
+                                <Label Name="lblPName" Content="{Binding utilisateurCommande.Nom_ut}"  Style="{StaticResource labelStyle_1}"
+                                       HorizontalAlignment="Center" HorizontalContentAlignment="Center"
+                                       Margin="10 20 0 0"/>
+                            </Border>
+                        </StackPanel>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="lstBxItemBorder" Property="Background" Value="#FF040C2D"></Setter>
+                        </Trigger>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter TargetName="lstBxItemBorder" Property="Background" Value="cyan"></Setter>
+                            <Setter TargetName="lblPName" Property="Foreground" Value="#FF040C2D"/>
+                            <Setter TargetName="lblPName" Property="FontSize" Value="18"/>
+                            <Setter TargetName="lblPName" Property="FontWeight" Value="ExtraBold"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--produit commande-->
+    <Style x:Key="ListBoxProduitCommade" TargetType="ListBoxItem">
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ListBoxItem">
+                    <Border Name="lstBxItemBorder"
+                            CornerRadius="10" Margin="4"
+                            BorderThickness="1" BorderBrush="Cyan">
+                        <StackPanel Orientation="Horizontal" Margin="10">
+                            <Border Width="50" Height="50" BorderThickness="1" BorderBrush="White">
+                                <Image Source="{Binding lesImages}" Width="50" Height="50"/>
+                            </Border>
+                            <Border BorderThickness="1" BorderBrush="White" HorizontalAlignment="Center">
+                                <Label Name="lblPName" Content="{Binding lesProduits.Nom_produit}"  Style="{StaticResource labelStyle_1}"
+               HorizontalAlignment="Center" HorizontalContentAlignment="Center"
+               Margin="10 10 0 0"/>
+                            </Border>
+                            <Border BorderThickness="1" BorderBrush="White" HorizontalAlignment="Center">
+                                <Label Name="lblQuan" Content="{Binding quantite}"  Style="{StaticResource labelStyle_1}"
+               HorizontalAlignment="Center" HorizontalContentAlignment="Center"
+               Margin="10 10 0 0"/>
+                            </Border>
+                        </StackPanel>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="lstBxItemBorder" Property="Background" Value="#FF040C2D"></Setter>
+                        </Trigger>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter TargetName="lstBxItemBorder" Property="Background" Value="cyan"></Setter>
+                            <Setter TargetName="lblPName" Property="Foreground" Value="#FF040C2D"/>
+                            <Setter TargetName="lblPName" Property="FontSize" Value="18"/>
+                            <Setter TargetName="lblPName" Property="FontWeight" Value="ExtraBold"/>
+
+                            <Setter TargetName="lblQuan" Property="Foreground" Value="#FF040C2D"/>
+                            <Setter TargetName="lblQuan" Property="FontSize" Value="18"/>
+                            <Setter TargetName="lblQuan" Property="FontWeight" Value="ExtraBold"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

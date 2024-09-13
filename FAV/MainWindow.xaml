@@ -1,0 +1,43 @@
+﻿<Window x:Class="FAV.MainWindow"
+            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+            xmlns:MD="http://materialdesigninxaml.net/winfx/xaml/themes"
+            mc:Ignorable="d"
+            xmlns:MW="http://metro.mahapps.com/winfx/xaml/controls"
+            Title="MainWindow" Height="720" Width="1080"
+            WindowStyle="None"
+            WindowStartupLocation="CenterScreen"
+            AllowsTransparency="True"
+            Background="{x:Null}" ContentRendered="Window_ContentRendered">
+    <MD:Card UniformCornerRadius="15" MD:ShadowAssist.ShadowAnimationDuration="4"
+                     Margin="25">
+        <MD:Card.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF060119" Offset="0"/>
+                <GradientStop Color="#FF060119" Offset="1"/>
+                <GradientStop Color="#FF050940" Offset="0.496"/>
+                <GradientStop Color="#FF04052D" Offset="0.789"/>
+            </LinearGradientBrush>
+        </MD:Card.Background>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"
+                    Margin="0 0 0 0">
+                <WrapPanel>
+                    <Image Source="Image/v_logo.png" HorizontalAlignment="Center" Height="500"
+                       Width="500"></Image>
+                </WrapPanel>
+
+                <TextBlock Text="Chargement des donnée.." FontSize="17" FontWeight="SemiBold"
+                       HorizontalAlignment="Left" Margin="160 30 0 15" Foreground="White"></TextBlock>
+                <ProgressBar Name="progressBar" Value="0" Height="5" Width="280" 
+                         IsIndeterminate="True" Visibility="Hidden"/>
+                <MW:ProgressRing x:Name="progrssRing" Margin="0 -10 0 0" Foreground="White" Visibility="Hidden" />
+            </StackPanel>
+        </Grid>
+    </MD:Card>
+</Window>

@@ -1,0 +1,54 @@
+﻿<Application x:Class="FAV.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:FAV"
+             xmlns:MD="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:MW="http://metro.mahapps.com/winfx/xaml/controls"
+             StartupUri="Login.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!--Pour metro web-->
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Themes/Light.Cyan.xaml" />
+
+
+                <!--Pour material Design-->
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+
+                <!--RESSOURCE PERSONNALISER-->
+
+                <!--toggleButon pour minimiser et fermer le fenetre Login-->
+                <ResourceDictionary Source="./RessourceDictionary/ToggleButtonMinAndClose.xaml"/>
+
+                <!--Style de textBox version_1-->
+                <ResourceDictionary Source="./RessourceDictionary/TextBoxStyle1.xaml"/>
+
+                <!--style pour le PasswordBox-->
+                <ResourceDictionary Source="./RessourceDictionary/PassowrdBoxStyle.xaml"/>
+
+                <!--toggleButton pour PasswordBox-->
+                <ResourceDictionary Source="./RessourceDictionary/ToggleButtonEyesMdp.xaml"/>
+
+                <!--style pour le label-->
+                <ResourceDictionary Source="./RessourceDictionary/LabelStyleLogin.xaml"/>
+
+                <!--style boutton 1-->
+                <ResourceDictionary Source="./RessourceDictionary/ButtonStyle_1.xaml"/>
+
+                <!--style listeview Menu gauche -->
+                <ResourceDictionary Source="./RessourceDictionary/ListViewItemMenuLeft.xaml"/>
+
+                <!--style comboBox-->
+                <ResourceDictionary Source="./RessourceDictionary/cmbStyle.xaml"/>
+
+                <!--style ListBox-->
+                <ResourceDictionary Source="./RessourceDictionary/ListBoxView.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Image\couv.png" />
+    <None Remove="Image\couvAdd.jpg" />
+    <None Remove="Image\fondLogin.jpg" />
+    <None Remove="Image\v_logo.png" />
+    <None Remove="Resources\map.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="LiveCharts.Wpf" Version="0.9.5" />
+    <PackageReference Include="MaterialDesignThemes.MahApps" Version="0.3.0" />
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.2592.51" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="System.Net.Http.Json" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Image\couv.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\couvAdd.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\fondLogin.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\v_logo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\map.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+</Project>

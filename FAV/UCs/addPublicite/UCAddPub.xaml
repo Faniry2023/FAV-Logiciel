@@ -1,0 +1,194 @@
+﻿<UserControl x:Class="FAV.UCs.addPublicite.UCAddPub"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FAV.UCs.addPublicite"
+             mc:Ignorable="d" 
+             xmlns:MD="http://materialdesigninxaml.net/winfx/xaml/themes"
+            xmlns:MW="http://metro.mahapps.com/winfx/xaml/controls"
+            SnapsToDevicePixels="True"
+            UseLayoutRounding="True"
+            Background="Transparent"
+            BorderThickness="0"
+            d:DesignHeight="750" d:DesignWidth="1400">
+    <Grid>
+        <Border Opacity="0.03">
+            <Border.Background>
+                <ImageBrush ImageSource="/Image/couvAdd.jpg"/>
+            </Border.Background>
+        </Border>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Vertical" Grid.Row="0">
+                <Label Content="Ajout des publicité ou annonce" FontSize="14" HorizontalAlignment="Center"
+               HorizontalContentAlignment="Center"
+               Margin="-60 0 0 0"
+               VerticalAlignment="Center" VerticalContentAlignment="Center"
+               FontWeight="ExtraBold" Foreground="White"/>
+                <Rectangle Fill="White" Height="5" Width="230" Margin="-55 0 0 0"/>
+            </StackPanel>
+            <Grid Grid.Row="1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal" Grid.Row="0" >
+                        <Border Grid.Row="0" BorderThickness="1" BorderBrush="#FF078FFF"
+                                HorizontalAlignment="Left" Width="700" Height="330"
+                                CornerRadius="20" Margin="30 20 0 0">
+                            <StackPanel Orientation="Vertical">
+                                <Label Content="Image" FontSize="15" HorizontalAlignment="Center"
+                                       HorizontalContentAlignment="Center"
+                                       Margin="-70 0 0 0"
+                                       VerticalAlignment="Center" VerticalContentAlignment="Center"
+                                       FontWeight="ExtraBold" Foreground="White"/>
+
+                                <StackPanel Orientation="Horizontal"
+                                        Height="290" HorizontalAlignment="Center"
+                                        Background="Transparent" Margin="0 -5 0 0">
+
+                                    <Canvas x:Name="CnvsImgDrapDropCouv" Width="200" Height="290"
+                                            AllowDrop="True"
+                                            Background="#FF078FFF" Drop="CnvsImgDrapDropCouv_Drop" >
+                                        <MD:PackIcon Kind="FileUploadDownloadOutline" Foreground="white"
+                                                     Height="200" Width="250"/>
+                                    </Canvas>
+                                    <Border Width="300" BorderThickness="1" 
+                                            BorderBrush="#FF078FFF"
+                                            AllowDrop="True"
+                                            Background="Transparent">
+                                        <Image x:Name="ImgCouv" Stretch="Fill" Width="300" Height="290"/>
+                                    </Border>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+                        <Border BorderThickness="1" BorderBrush="#FF078FFF" Width="550" Margin="20 20 0 0"
+                                Height="320" CornerRadius="10" HorizontalAlignment="Right">
+                            <StackPanel Orientation="Vertical">
+                                <Label Content="Autre déscription précise" FontSize="14" HorizontalAlignment="Center"
+                                       HorizontalContentAlignment="Center"
+                                       Margin="0 20 0 0"
+                                       VerticalAlignment="Center" VerticalContentAlignment="Center"
+                                       FontWeight="ExtraBold" Foreground="White"/>
+                                <TextBox x:Name="txtDescriTitre" Width="300" Height="50"
+                                         HorizontalAlignment="Center"
+                                         HorizontalContentAlignment="Left"
+                                         Style="{StaticResource TxtStyle}"
+                                         MD:HintAssist.Hint="titre du déscription"/>
+                                <Border BorderThickness="5" BorderBrush="White" Width="320" CornerRadius="20" Margin="10" Padding="0 0 0 10">
+                                    <TextBox x:Name="txtDescriValeur" Width="280" Height="80"
+                                             HorizontalAlignment="Center" TextWrapping="Wrap" AcceptsReturn="True"
+                                             HorizontalContentAlignment="Left"
+                                             Style="{StaticResource TxtStyle}"
+                                             MD:HintAssist.Hint="Déscription"/>
+                                </Border>
+                                <Button Name="btnAjoutDescriPre" Content="Ajouter" Style="{StaticResource buttonStyle_2}" Width="200" 
+                                        Margin="0 50 0 0" Click="btnAjoutDescriPre_Click"/>
+                            </StackPanel>
+                        </Border>
+                        
+                        
+                    </StackPanel>
+                    <StackPanel Grid.Row="1">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="600"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Border Grid.Column="0" Margin="-50 0 0 0">
+                                <Border BorderThickness="2" BorderBrush="#FF078FFF" CornerRadius="10" 
+                                        Height="280"
+                                        Padding="5" Width="500">
+                                    <StackPanel Orientation="Vertical">
+                                        <Label Content="Apropos du publicité" FontSize="14" HorizontalAlignment="Center"
+                                           HorizontalContentAlignment="Center" Margin="0 20 0 0"
+                                           VerticalAlignment="Center" VerticalContentAlignment="Center"
+                                           FontWeight="ExtraBold" Foreground="White"/>
+                                        <TextBox x:Name="txtNomPub" Width="350" Height="50"
+                                             HorizontalAlignment="Center"
+                                             HorizontalContentAlignment="Left"
+                                             Style="{StaticResource TxtStyle}"
+                                             MD:HintAssist.Hint="Nom du publicité"/>
+                                        <StackPanel Orientation="Vertical">
+                                            <Border Width ="150">
+                                                <Image Source="/Image/v_logo.png" />
+                                            </Border>
+                                            <Button x:Name="btnPublier" Content="Publié" Style="{StaticResource buttonStyle_2}" Width="150" 
+                Margin="0 0 0 0" Click="btnPublier_Click"/>
+                                            <Button Style="{StaticResource buttonStyle_2}" Background="White" Width="60" Height="40" 
+                HorizontalAlignment="Center" 
+                HorizontalContentAlignment="Center"
+                Margin="0 10 0 0" >
+                                                <MD:PackIcon Kind="CancelBox" Height="30" Width="30" Foreground="Red"/>
+                                            </Button>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Border>
+                            </Border>
+                            <Border Grid.Column="1" BorderThickness="3" 
+                                    Margin="-130 0 0 0"
+                                    BorderBrush="#FF078FFF" Width="400"
+                                    CornerRadius="10">
+                                <TextBox x:Name="txtDescription" Width="250" Height="270"
+                                         HorizontalAlignment="Center" TextWrapping="Wrap" AcceptsReturn="True"
+                                         HorizontalContentAlignment="Left"
+                                         Style="{StaticResource TxtStyle}"
+                                         MD:HintAssist.Hint="Déscription"/>
+                            </Border>
+                            <Border Grid.Column="2" BorderThickness="3" 
+                                    Margin="-150 0 0 0" Width="360"
+                                    BorderBrush="#FF078FFF"
+                                    CornerRadius="10">
+                                <StackPanel Orientation="Vertical">
+                                    <Label Content="Votre déscription" FontSize="14" HorizontalAlignment="Center"
+                                           HorizontalContentAlignment="Center"
+                                           Margin="0 0 0 0"
+                                           VerticalAlignment="Center" VerticalContentAlignment="Center"
+                                           FontWeight="ExtraBold" Foreground="White"/>
+                                    <ListBox Name="ListBoxDescri" Width="300" Height="250"
+                                            ItemContainerStyle="{StaticResource ListBoxCitiesItemStyle}">
+                                        <ListBox.ContextMenu>
+                                            <ContextMenu Background="Transparent">
+                                                <ContextMenu.Items>
+                                                    <MenuItem Name="lstBxMenuItemDelete">
+                                                        <MenuItem.Style>
+                                                            <Style TargetType="MenuItem">
+                                                                <Setter Property="Template">
+                                                                    <Setter.Value>
+                                                                        <ControlTemplate TargetType="MenuItem">
+                                                                            <Border>
+                                                                                <StackPanel Orientation="Vertical" Width="200">
+
+                                                                                    <Button Name="SupDescri" Width="200" Height="50"
+                                                        Content="blabla"
+                                                        Margin="0 0"
+                                                        Style="{StaticResource buttonStyle_3}"/>
+                                                                                </StackPanel>
+                                                                            </Border>
+                                                                        </ControlTemplate>
+                                                                    </Setter.Value>
+                                                                </Setter>
+                                                            </Style>
+                                                        </MenuItem.Style>
+                                                    </MenuItem>
+                                                </ContextMenu.Items>
+                                            </ContextMenu>
+                                        </ListBox.ContextMenu>
+                                    </ListBox>
+                                </StackPanel>
+                            </Border>
+                        </Grid>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </Grid>
+        <MW:ProgressRing x:Name="progressRing" FontSize="140" Foreground="White" FontWeight="ExtraBold"
+                         Width="140" Height="140" Visibility="Hidden"/>
+    </Grid>
+</UserControl>

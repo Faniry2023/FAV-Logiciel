@@ -1,0 +1,81 @@
+﻿<UserControl x:Class="FAV.UCs.ProduitALivrer.UCCommande"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FAV.UCs.ProduitALivrer"
+             xmlns:MD="http://materialdesigninxaml.net/winfx/xaml/themes"
+               xmlns:MW="http://metro.mahapps.com/winfx/xaml/controls"
+            xmlns:LC="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+             xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
+             mc:Ignorable="d" 
+             d:DesignHeight="700" d:DesignWidth="1300">
+    <MD:TransitioningContent OpeningEffect="{MD:TransitionEffect Kind=ExpandIn, Duration=0:0:3}">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="500"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="0" BorderThickness="2" BorderBrush="#FF078FFF" Margin="10 -55 0 0" Height="670" CornerRadius="20">
+                <StackPanel Orientation="Vertical">
+                    <Border BorderThickness="0 0 0 5" BorderBrush="White" Width="200" Margin="0 0 0 10">
+                        <Label Content="Liste des Produits à livrer" Style="{StaticResource labelStyle_1}" Margin="0 10 0 0"/>
+                    </Border>
+                    <Border BorderThickness="1" BorderBrush="#FF078FFF"></Border>
+                    <Button Name="Actualiser" Content="Actualiser" Style="{StaticResource buttonStyle_2}" Click="Actualiser_Click"/>
+                    <Border  Height="570" Margin="30 20 30 0" Padding="0 20 0 0">
+                        <Grid>
+                            <Grid>
+                                <ListBox x:Name="ListBoxCommande"
+                     ItemContainerStyle="{StaticResource ListBoxPersCommande}" SelectionChanged="ListBoxCommande_SelectionChanged" >
+
+                                </ListBox>
+                            </Grid>
+                            <Grid VerticalAlignment="Center" Margin="0 0 0 0">
+                                <MW:ProgressRing x:Name="progressRing" 
+                                     Foreground="White" Visibility="Collapsed" 
+                                     Width="80"
+                                     VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+                            </Grid>
+                        </Grid>
+                    </Border>
+                </StackPanel>
+            </Border>
+            <Border Grid.Column="1" BorderThickness="2" BorderBrush="#FF078FFF" CornerRadius="10" Height="670" Margin="10 -60 60 0">
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal">
+                        <Border BorderThickness="1" BorderBrush="White" Height="350" Width="300" Margin="5" CornerRadius="10">
+                            <StackPanel Orientation="Vertical">
+                                <Border BorderThickness="1" BorderBrush="White" Margin="0 5 0 0" Height="200" Width="250">
+                                    <Image x:Name="imageUser" Width="270" Height="240"/>
+                                </Border>
+                                <Label Name="lblNom" Style="{StaticResource labelStyle_1}"/>
+                                <Label Name="lblPrenom" Style="{StaticResource labelStyle_1}"/>
+                                <Label Name="lblContact" Style="{StaticResource labelStyle_1}"/>
+                                <Button Name="ProdLivre" Content="Produit livrée" Style="{StaticResource buttonStyle_2}" Width="180" Click="ProdLivre_Click"/>
+                            </StackPanel>
+                        </Border>
+                        <Border BorderThickness="1" BorderBrush="White" Height="350" Width="500" Margin="5" CornerRadius="10">
+                            <wv2:WebView2 x:Name="GoogleMapBrowser" CoreWebView2InitializationCompleted="GoogleMapBrowser_CoreWebView2InitializationCompleted" NavigationCompleted="GoogleMapBrowser_NavigationCompleted" />
+
+                        </Border>
+                    </StackPanel>
+                    <Border BorderThickness="1" BorderBrush="White" CornerRadius="20" Height="300">
+                        <StackPanel Orientation="Vertical">
+                            <Label Content="Produit à livrer (image - identifiant - nom produit - quantité)" Style="{StaticResource labelStyle_1}"/>
+                            <Border Height="260" Width="820">
+                                <ListBox x:Name="ListBoxProduit"
+                                        ItemContainerStyle="{StaticResource ListBoxProduitCommade}" >
+
+                                </ListBox>
+                            </Border>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+            </Border>
+            <Grid Grid.Column="1">
+                <MW:ProgressRing x:Name="progresRingList" Foreground="White" Width="120" Visibility="Collapsed"/>
+            </Grid>
+        </Grid>
+    </MD:TransitioningContent>
+</UserControl>

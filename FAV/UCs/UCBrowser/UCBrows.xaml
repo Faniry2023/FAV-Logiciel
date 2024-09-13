@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="FAV.UCs.UCBrowser.UCBrows"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+              xmlns:MD="http://materialdesigninxaml.net/winfx/xaml/themes"
+   xmlns:MW="http://metro.mahapps.com/winfx/xaml/controls"
+             xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
+             xmlns:local="clr-namespace:FAV.UCs.UCBrowser"
+             mc:Ignorable="d" 
+             d:DesignHeight="750" d:DesignWidth="1300">
+    <Grid>
+        <MD:TransitioningContent OpeningEffect="{MD:TransitionEffect Kind=ExpandIn, Duration=0:0:3}">
+        <Border BorderThickness="1" BorderBrush="White" CornerRadius="20" Margin="200 0 0 0" Width="800" Height="600">
+            <wv2:WebView2 Name="myWebView" Width="800" Height="600"/>
+        </Border>
+        </MD:TransitioningContent>
+    </Grid>
+</UserControl>
